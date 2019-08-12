@@ -19,6 +19,7 @@ parts:
     python-version: python3
     python-packages:
        [flask]
+    source: .
 
 apps:
   test-incuvers-iot-jy:
