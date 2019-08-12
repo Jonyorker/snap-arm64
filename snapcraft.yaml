@@ -1,0 +1,32 @@
+name: test-incuvers-iot-jy
+version: '1.02'
+summary: test-incuvers-iot-jy
+description: |
+  Simple test of a hello world flask app.
+grade: devel
+
+architectures:
+  - build-on: arm64
+    run-on: arm64
+
+confinement: devmode
+
+base: core18
+
+parts:
+  flask-app:
+    plugin: python
+    python-version: python3
+    python-packages:
+       [flask]
+
+apps:
+  test-incuvers-iot-jy:
+      command: flask run
+      daemon: simple
+      restart-condition: always
+      plugs: [home, network, network-bind]
+      environment:
+          FLASK_APP: hello.py
+          LC_ALL: C.UTF-8
+          LANG: C.UTF-8
