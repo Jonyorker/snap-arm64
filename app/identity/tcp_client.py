@@ -2,7 +2,7 @@ import socket
 import zipfile
 import os
 
-host = '10.10.10.1'  # get local machine name
+host = '192.168.11.56'  # get local machine name
 port = 8624  # Make sure it's within the > 1024 $$ <65535 range
 
 
